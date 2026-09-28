@@ -1,0 +1,52 @@
+[project]
+name = "clash-analyzer"
+version = "0.5.2"
+description = "Clash Royale progress tracker, upgrade planner, battle analytics and meta comparison."
+authors = [
+    { name = "Gergő Honyák", email = "242720@buas.nl" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "apscheduler>=3.11.3,<4",
+    "fastapi>=0.141.1",
+    "httpx>=0.28.1",
+    "pydantic-settings>=2.15.0",
+    "sqlmodel>=0.0.47",
+    "tzdata>=2026.4",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[project.scripts]
+clash-analyzer = "clash_analyzer.__main__:main"
+
+[build-system]
+requires = ["uv_build>=0.12.19,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+    "pytest-cov>=7.1.0",
+    "respx>=0.23.1",
+    "ruff>=0.16.9",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+addopts = "-q"
+filterwarnings = ["ignore:Using `httpx` with `starlette.testclient`"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF"]
+ignore = ["B008", "E501"]
+
+[tool.coverage.run]
+source = ["clash_analyzer"]
+omit = ["*/__main__.py"]
