@@ -4,7 +4,11 @@ A Clash Royale progress tracker, upgrade planner, battle analytics dashboard and
 
 The API has no memory: the battlelog keeps only the last ~30 games, and profiles only show the current state. Clash Analyzer polls tracked players in the background and stores every battle and a profile snapshot, so history and trends build up over time. It then computes things the game doesn't show you.
 
+<p align="center"><img src="docs/images/overview.png" width="90%" alt="Player overview: profile stats, current deck with Evo and Hero badges, insights, ranked history and upcoming chests" /></p>
+
 ## Features
+
+<p align="center"><img src="docs/images/battles.png" width="90%" alt="Battle analytics: tilt and momentum, session fatigue, levels vs skill, elixir leaked, close games, Evo and Hero advantage, nemesis and prey cards, opponent archetypes" /></p>
 
 **Battle analytics**
 - **Tilt detection:** your win rate after a win, after a loss, and after 2+ losses in a row.
@@ -24,11 +28,15 @@ The API has no memory: the battlelog keeps only the last ~30 games, and profiles
 - Snapshot trends: collection level, mastery levels, average card level.
 - Day and week deltas.
 
+<p align="center"><img src="docs/images/progress.png" width="90%" alt="Progress tab: trophy path rebuilt from stored battles, day and week deltas, snapshot trends" /></p>
+
 **Upgrade planner**
 - Gold and copies needed to bring your deck to level 13–16.
 - Which cards you play have enough copies to upgrade, cheapest first.
 - What's closest to its next level, and your card levels compared to your opponents'.
 - The full collection, sortable.
+
+<p align="center"><img src="docs/images/upgrades.png" width="90%" alt="Upgrade planner: gold and copies to level 16, your deck against opponents' levels, cards closest to their next level" /></p>
 
 **Mastery and achievements**
 - Every mastery badge mapped to its card, sorted by what's closest to the next level.
@@ -36,6 +44,13 @@ The API has no memory: the battlelog keeps only the last ~30 games, and profiles
 **Meta comparison**
 - A crawl of the top 100 Path of Legends players' battlelogs, with card usage and win rates, archetypes, and top decks.
 - **vs Meta:** how your cards perform at the top, similar top decks, and swap ideas.
+
+<table>
+<tr>
+<td width="50%"><img src="docs/images/meta.png" alt="Meta page: top cards by usage and win rate, archetypes, from the top Path of Legends players"></td>
+<td width="50%"><img src="docs/images/vs-meta.png" alt="vs Meta tab: how each card in your deck is used and performs among top players"></td>
+</tr>
+</table>
 
 **Clans**
 - Members with activity (days since last seen), donations, and live river race fame and decks used today.
